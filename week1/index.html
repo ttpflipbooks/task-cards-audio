@@ -2,17 +2,109 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>Week 1 Audio Guide</title>
+
+<style>
+body{
+font-family:Arial,sans-serif;
+background:#f5f5f5;
+text-align:center;
+margin:0;
+padding:20px;
+}
+
+h1{
+margin-bottom:30px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+gap:20px;
+max-width:900px;
+margin:auto;
+}
+
+.icon{
+background:white;
+border-radius:15px;
+padding:15px;
+box-shadow:0 2px 8px rgba(0,0,0,.15);
+cursor:pointer;
+}
+
+.icon img{
+width:90px;
+height:90px;
+object-fit:contain;
+}
+
+audio{
+width:100%;
+margin-top:20px;
+}
+</style>
 </head>
+
 <body>
 
 <h1>Week 1 Audio Guide</h1>
 
-<h2>Before Cleaning</h2>
+<div class="grid">
 
-<audio controls>
-  <source src="Before%20Cleaning.mp3" type="audio/mpeg">
-</audio>
+<div class="icon" onclick="playAudio('Before Cleaning.mp3')">
+<img src="Supplies%20Equip.jpg">
+</div>
+
+<div class="icon" onclick="playAudio('Collecting Cleaning Equipment.mp3')">
+<img src="collecting eq closing.jpg">
+</div>
+
+<div class="icon" onclick="playAudio('Week1 trash.mp3')">
+<img src="trash.jpg">
+</div>
+
+<div class="icon" onclick="playAudio('Week 1 Restroom.mp3')">
+<img src="Restrooms.jpg">
+</div>
+
+<div class="icon" onclick="playAudio('Week 1 Kitchen.mp3')">
+<img src="kitchenbreakroom.jpg">
+</div>
+
+<div class="icon" onclick="playAudio('Week 1 Office.mp3')">
+<img src="Office areas.jpg">
+</div>
+
+<div class="icon" onclick="playAudio('Supply Count.mp3')">
+<img src="supply count.jpg">
+</div>
+
+<div class="icon" onclick="playAudio('Sweep Hard Floors.mp3')">
+<img src="sweep.jpg">
+</div>
+
+<div class="icon" onclick="playAudio('Mopping all hard floors.mp3')">
+<img src="mop.png">
+</div>
+
+<div class="icon" onclick="playAudio('Vacuum All Carpets.mp3')">
+<img src="vacuum.jpg">
+</div>
+
+</div>
+
+<audio id="player" controls></audio>
+
+<script>
+function playAudio(file){
+const player=document.getElementById('player');
+player.src=file;
+player.play();
+}
+</script>
 
 </body>
 </html>
